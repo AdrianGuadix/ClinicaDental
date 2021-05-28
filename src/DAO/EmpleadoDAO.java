@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  * @author DAM108
  */
 public class EmpleadoDAO {
-    private Connection conn;
+    private static Connection conn;
     private Empleado e;
 
     public Connection getConn() {
@@ -86,7 +86,7 @@ public class EmpleadoDAO {
         }
     return empleados;
 }
-    public void eliminarEmpleado(int idempleado) {
+    public static void eliminarEmpleado(int idempleado) {
         try {
             if (conn == null || conn.isClosed()) {
                 conn = ConexionBD.conectarseBD();
